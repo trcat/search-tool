@@ -1,0 +1,98 @@
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+main {
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+main .item {
+  border: 2px solid #eee;
+  border-radius: 4px;
+  padding: 10px;
+}
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+form input {
+  display: inline-block;
+  margin-right: 20px;
+}
+form label#pageLabel {
+  margin-right: 20px;
+}
+form label#pageLabel input {
+  margin: 0;
+  width: 40px;
+}
+.table-container {
+  width: 100%;
+  max-height: 600px;
+  overflow: auto;
+}
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+th,
+td {
+  border: 1px solid #eee;
+  padding: 5px;
+  box-sizing: border-box;
+}
+th.url,
+td.url {
+  width: calc((100vw * 0.98 - 264px) / 4);
+}
+th.title,
+td.title {
+  width: calc((100vw * 0.98 - 36px) / 4);
+}
+th.result,
+td.result {
+  width: 50px;
+  text-align: center;
+}
+th {
+  background-color: #ccc;
+}
+.loading {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.loading .content {
+  background-color: black;
+  opacity: 0.6;
+  color: white;
+  font-size: 40px;
+  line-height: 40px;
+  position: relative;
+  top: 40vh;
+  width: 300px;
+  text-align: center;
+  margin: auto;
+  border-radius: 4px;
+  padding: 20px 20px;
+}
+.copy-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+.copy-btn button {
+  font-size: 28px;
+}
+.copy-success,
+.copy-fail {
+  display: none;
+}

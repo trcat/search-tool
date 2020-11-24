@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>域名端口搜索工具</title>
+  <link rel="stylesheet" href="./dist/index.css">
+  <script src="./dist/jquery.min.js"></script>
+  <script src="./dist/clipboard.min.js"></script>
+  <script src="./dist/index.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="item left">
+      <form class="form" onkeydown="if(event.keyCode==13) return false;">
+        <input id="domain" name="domain" placeholder="请输入域名">
+        <label id="pageLabel" for="page">第<input id="page" name="page" type="number" value="1" min="1" max="20">页</label>
+        <button type="button" id="domainBtn">读取</button>
+      </form>
+      <div class="table-container">
+        <table class="view">
+          <thead>
+            <tr>
+              <th class="url">路径</th>
+              <th class="title">标题</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="item right">
+      <form class="form" onkeydown="if(event.keyCode==13) return false;">
+        <input id="port" name="port" placeholder="请输入端口">
+        <button type="button" id="portBtn">测试</button>
+      </form>
+      <div class="table-container">
+        <table class="view">
+          <thead>
+            <tr>
+              <th class="url">路径</th>
+              <th class="title">标题</th>
+              <th class="result">结果</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <div class="copy-btn"> <button>一键复制</button> <i class="copy-success"><svg t="1605941708618" class="icon"
+        viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2831" width="200" height="200">
+        <path
+          d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z"
+          p-id="2832" fill="#1afa29"></path>
+        <path
+          d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z"
+          p-id="2833" fill="#1afa29"></path>
+      </svg></i> <i class="copy-fail"><svg t="1605941708618" class="icon" viewBox="0 0 1024 1024" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" p-id="2831" width="200" height="200">
+        <path
+          d="M512 0C228.430769 0 0 228.430769 0 512s228.430769 512 512 512 512-228.430769 512-512S795.569231 0 512 0z m0 945.230769C271.753846 945.230769 78.769231 752.246154 78.769231 512S271.753846 78.769231 512 78.769231s433.230769 192.984615 433.230769 433.230769-192.984615 433.230769-433.230769 433.230769z"
+          p-id="2832" fill="#1afa29"></path>
+        <path
+          d="M716.8 330.830769l-208.738462 248.123077c-15.753846 15.753846-43.323077 19.692308-59.076923 7.876923L299.323077 472.615385c-15.753846-11.815385-43.323077-7.876923-55.138462 7.876923-11.815385 15.753846-7.876923 43.323077 7.876923 55.138461l149.661539 114.215385c19.692308 15.753846 47.261538 23.630769 74.830769 23.630769 35.446154 0 70.892308-15.753846 94.523077-43.323077l208.738462-248.123077c15.753846-15.753846 11.815385-43.323077-3.938462-55.138461-19.692308-15.753846-43.323077-15.753846-59.076923 3.938461z"
+          p-id="2833" fill="#1afa29"></path>
+      </svg></i> </div>
+  <div class="loading">
+    <div class="content">加载中，请稍后</div>
+  </div>
+</body>
+
+</html>
